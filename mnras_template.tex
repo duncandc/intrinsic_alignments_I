@@ -43,7 +43,10 @@
 %%% halo model
 \newcommand{\tpcf}[1]{\xi_{\rm #1}}
 \newcommand{\tpcftwo}[2]{\xi_{\rm #1}^{\rm #2}}
-
+\newcommand{\evec}[1]{\vec{e}_{\rm #1}}
+\newcommand{\evectwo}[2]{\vec{e}_{\rm #1}^{\rm #2}}
+\newcommand{\evechat}[1]{\hat{e}_{\rm #1}}
+\newcommand{\evechattwo}[2]{\hat{e}_{\rm #1}^{\rm #2}}
 
 %%% math
 \newcommand{\dd}{\rm d}
@@ -138,7 +141,7 @@ In Eq.~\ref{eq:tpcfgg1h}, $\lambda(\vec{x}\vert M)$ is the spatial distribution 
 \begin{align}
 \label{eq:tpcfee2h}
 \begin{split}
-\tpcftwo{ee}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times  \mean{\vert\vec{e}_{1}\cdot\vec{e}_{2}\vert^{2}}
+\tpcftwo{ee}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times  \mean{\vert\evec{1}\cdot\evec{2}\vert^{2}}
 \end{split}
 \end{align}
 
@@ -146,21 +149,64 @@ In Eq.~\ref{eq:tpcfee2h}, $\vec{e}$ is the three-dimensional orientation vector 
 
 \begin{align}
 \begin{split}
-\tpcftwo{ee}{1h}(r) =  \frac{1}{\bar{n}_{\rm g}^{2}} \int\dd M \frac{\rm dn}{\dd M} \int\dd^{3}& x\lambda(\vec{x}\vert M)\lambda(\vec{x}+\vec{r}\vert M)\\ & \times  \mean{\vert\vec{e}_{1}\cdot\vec{e}_{2}\vert^{2}}
+\tpcftwo{ee}{1h}(r) =  \frac{1}{\bar{n}_{\rm g}^{2}} \int\dd M \frac{\rm dn}{\dd M} \int\dd^{3}& x\lambda(\vec{x}\vert M)\lambda(\vec{x}+\vec{r}\vert M)\\ & \times  \mean{\vert\evec{1}\cdot\evec{2}\vert^{2}}
 \end{split}
 \end{align}
 
 \begin{align}
 \begin{split}
-\tpcftwo{ed}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times  \mean{\vert\vec{e}_{1}\cdot\hat{r}\vert^{2}}
+\tpcftwo{ed}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times \left( \mean{\vert\evec{1}\cdot\hat{r}\vert^{2}} +  \mean{\vert\evec{2}\cdot\hat{r}\vert^{2}} \right)
 \end{split}
 \end{align}
 
 \begin{align}
 \begin{split}
-\tpcftwo{ed}{1h}(r) =  \frac{1}{\bar{n}_{\rm g}^{2}} \int\dd M \frac{\rm dn}{\dd M} \int\dd^{3}& x\lambda(\vec{x}\vert M)\lambda(\vec{x}+\vec{r}\vert M)\\ & \times  \mean{\vert\vec{e}_{1}\cdot\hat{r}\vert^{2}}
+\tpcftwo{ed}{1h}(r) =  \frac{1}{\bar{n}_{\rm g}^{2}} \int\dd M \frac{\rm dn}{\dd M} \int\dd^{3}& x\lambda(\vec{x}\vert M)\lambda(\vec{x}+\vec{r}\vert M)\\ & \times \left(  \mean{\vert\evec{1}\cdot\hat{r}\vert^{2}} + \mean{\vert\evec{2}\cdot\hat{r}\vert^{2}} \right)
 \end{split}
 \end{align}
+
+In the class of models explored in the present work, we will assume that the magnitude of galaxy ellipticity is uncorrelated with the galaxy's alignment. Mathematically, for $\tpcf{ed}(r)$ this assumption takes the form:
+
+\begin{align}
+\label{eq:uncorrelated_ellipticity_ed}
+ \mean{\vert\evec{i}\cdot\hat{r}\vert^{2}} =  \mean{(e_{\rm i})^{2}}\times\mean{\vert\evechat{i}\cdot\hat{r}\vert^{2}};
+\end{align}
+similarly, for $\tpcf{ee}(r)$ our assumption manifests as:  
+\begin{align}
+\label{eq:uncorrelated_ellipticity_ee}
+\mean{\vert\evec{1}\cdot\evec{2}\vert^{2}} =  \mean{(e_{1})^{2}}\times\mean{(e_{2})^{2}}\times\mean{\vert\evechat{1}\cdot\evechat{2}\vert^{2}}.
+\end{align}
+We note, however, that this assumption breaks down if the same physical processes aligning the galaxy also appreciably stretch its isophotes; this effect may become important for measurements of $\tpcf{ed}(r)$ and $\tpcf{ee}(r)$ on very small scales, as a galaxy with a very nearby companion is more likely to have experienced morphological change due to the tidal field produced by the companion. 
+
+For $\tpcf{ee}(r),$ we can decompose the final term in the integrand into central and satellite contributions:
+
+\begin{align}
+\begin{split}
+\mean{\vert\evec{1}\cdot\evec{2}\vert^{2}} &= 
+f_{\rm cen, 1}f_{\rm cen, 2}\mean{\vert\evec{cen, 1}\cdot\evec{cen, 2}\vert^{2}} \\
+& + f_{\rm sat, 1}f_{\rm sat, 2}\mean{\vert\evec{sat, 1}\cdot\evec{sat, 2}\vert^{2}} \\
+&+ f_{\rm cen, 1}f_{\rm sat, 2}\mean{\vert\evec{cen, 1}\cdot\evec{sat, 2}\vert^{2}} \\
+& + f_{\rm sat, 1}f_{\rm cen, 2}\mean{\vert\evec{sat, 1}\cdot\evec{cen, 2}\vert^{2}}  
+\end{split}
+\end{align}
+where $f_{\rm cen, i}$ and $f_{\rm sat, i}$ are the fraction of galaxies in sample $i$ that are centrals and satellites, so that $f_{\rm cen, i} + f_{\rm sat, i}=1.$ 
+
+For $\tpcf{ed}(r),$ this central-satellite decomposition takes the form:
+\begin{align}
+\begin{split}
+ \mean{\vert\evec{i}\cdot\hat{r}\vert^{2}} =   f_{\rm cen, i}\mean{\vert\evec{cen, i}\cdot\hat{r}\vert^{2}} +  f_{\rm sat, i}\mean{\vert\evec{sat, i}\cdot\hat{r}\vert^{2}}.
+\end{split}
+\end{align}
+
+%\begin{align}
+%\begin{split}
+%\mean{\vert\evec{i}\cdot\hat{r}\vert^{2}} &= 
+%f_{\rm cen, 1}f_{\rm cen, 2}\mean{\vert\evechat{1}\cdot\hat{r}\vert^{2}} \\
+%& + f_{\rm sat, 1}f_{\rm sat, 2}\mean{\vert\evec{sat, 1}\cdot\evec{sat, 2}\vert^{2}} \\
+%\end{split}
+%\end{align}
+
+
 
 \section{Methods}
 
