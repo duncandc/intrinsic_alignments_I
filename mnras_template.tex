@@ -35,6 +35,11 @@
 \newcommand{\beq}{\begin{eqnarray}}
 \newcommand{\eeq}{\end{eqnarray}}
 
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+
 %%% halo model
 \newcommand{\tpcf}[1]{\xi_{\rm #1}}
 \newcommand{\tpcftwo}[2]{\xi_{\rm #1}^{\rm #2}}
@@ -109,22 +114,35 @@ We extend the halo based model for alignments presented in \citet{Schneider:2010
 \eeq
 
 \begin{align}
+\label{eq:tpcfgg2h}
 \begin{split}
 \tpcftwo{gg}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times  \meantwo{N_{\rm g}}{M_1} \meantwo{N_{\rm g}}{M_2}. 
 \end{split}
 \end{align}
 
+The assumptions underlying Eq.~\ref{eq:tpcfgg2h} are:
+\bit
+\item $r\gg R_{\rm vir}^{\rm max}$
+\item On very large scales, $\tpcf{hh}(r)$ varies slowly across the length scale of halos. 
+\eit
+
 \begin{align}
+\label{eq:tpcfgg1h}
 \begin{split}
 \tpcftwo{gg}{1h}(r) =  \frac{1}{\bar{n}_{\rm g}^{2}} \int\dd M \frac{\rm dn}{\dd M} \int\dd^{3}& x\lambda(\vec{x}\vert M)\lambda(\vec{x}+\vec{r}\vert M)\\ & \times  \meantwo{N_{\rm g}(N_{\rm g}-1)}{M}
 \end{split}
 \end{align}
 
+In Eq.~\ref{eq:tpcfgg1h}, $\lambda(\vec{x}\vert M)$ is the spatial distribution of galaxies within a halo of mass $M,$ normalized so that the integral of the profile over the volume of the halo is unity.
+
 \begin{align}
+\label{eq:tpcfee2h}
 \begin{split}
 \tpcftwo{ee}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times  \mean{\vert\vec{e}_{1}\cdot\vec{e}_{2}\vert^{2}}
 \end{split}
 \end{align}
+
+In Eq.~\ref{eq:tpcfee2h}, $\vec{e}$ is the three-dimensional orientation vector of the galaxy. 
 
 \begin{align}
 \begin{split}
