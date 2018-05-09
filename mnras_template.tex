@@ -109,14 +109,40 @@ We extend the halo based model for alignments presented in \citet{Schneider:2010
 \eeq
 
 \begin{align}
+\begin{split}
 \tpcftwo{gg}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times  \meantwo{N_{\rm g}}{M_1} \meantwo{N_{\rm g}}{M_2}. 
+\end{split}
 \end{align}
 
 \begin{align}
+\begin{split}
 \tpcftwo{gg}{1h}(r) =  \frac{1}{\bar{n}_{\rm g}^{2}} \int\dd M \frac{\rm dn}{\dd M} \int\dd^{3}& x\lambda(\vec{x}\vert M)\lambda(\vec{x}+\vec{r}\vert M)\\ & \times  \meantwo{N_{\rm g}(N_{\rm g}-1)}{M}
+\end{split}
 \end{align}
 
-%\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times \mean{N_{\rm g}(M_1)N_{\rm g}(M_2)}. 
+\begin{align}
+\begin{split}
+\tpcftwo{ee}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times  \mean{\vert\vec{e}_{1}\cdot\vec{e}_{2}\vert^{2}}
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+\tpcftwo{ee}{1h}(r) =  \frac{1}{\bar{n}_{\rm g}^{2}} \int\dd M \frac{\rm dn}{\dd M} \int\dd^{3}& x\lambda(\vec{x}\vert M)\lambda(\vec{x}+\vec{r}\vert M)\\ & \times  \mean{\vert\vec{e}_{1}\cdot\vec{e}_{2}\vert^{2}}
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+\tpcftwo{ed}{2h}(r) =   \frac{1}{\bar{n}_{\rm g}^{2}}\int\dd M_1 \int\dd M_2 & \frac{\rm dn}{\dd M_1}\frac{\rm dn}{\dd M_2} \tpcf{hh}(r\vert M_1, M_2) \\& \times  \mean{\vert\vec{e}_{1}\cdot\hat{r}\vert^{2}}
+\end{split}
+\end{align}
+
+\begin{align}
+\begin{split}
+\tpcftwo{ed}{1h}(r) =  \frac{1}{\bar{n}_{\rm g}^{2}} \int\dd M \frac{\rm dn}{\dd M} \int\dd^{3}& x\lambda(\vec{x}\vert M)\lambda(\vec{x}+\vec{r}\vert M)\\ & \times  \mean{\vert\vec{e}_{1}\cdot\hat{r}\vert^{2}}
+\end{split}
+\end{align}
 
 \section{Methods}
 
